@@ -1,12 +1,14 @@
-package com.javarush.test.level18.lesson03.task01;
+package com.javarush.test.level18.lesson03.task03;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
-/* Максимальный байт
+/* Самые частые байты
 Ввести с консоли имя файла
-Найти максимальный байт в файле, вывести его на экран.
+Найти байт или байты с максимальным количеством повторов
+Вывести их на экран через пробел
 Закрыть поток ввода-вывода
 */
 
@@ -16,13 +18,9 @@ public class Solution {
         String fileName = reader.readLine();
         reader.close();
         FileInputStream input = new FileInputStream(fileName);
-        int max = input.read();
-        while(input.available()>0){
-            int d = input.read();
-            if(d>max)
-                max = d;
-        }
-        input.close();
-        System.out.println(max);
+        ArrayList<Integer> a = new ArrayList<Integer>();
+        while (input.available()>0)
+            a.add(input.read());
+
     }
 }

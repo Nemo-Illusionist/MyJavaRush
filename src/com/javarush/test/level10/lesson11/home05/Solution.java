@@ -42,6 +42,17 @@ public class Solution
 
 
         //напишите тут ваш код
+        for (Character by: alphabet){
+            int sum=0;
+            for (String s : list){
+                char[] c = s.toCharArray();
+                for (char b: c){
+                    if (b == by)
+                        sum++;
+                }
+            }
+            System.out.println(by + " " + sum);
+        }
     }
 
 }
